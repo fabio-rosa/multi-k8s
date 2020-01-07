@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: fabster-k8s-com-tls
+spec:
+  secretName: fabster-k8s-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: fabster-k8s.com
+  dnsNames:
+    - fabster-k8s.com
+    - www.fabster-k8s.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - fabster-k8s.com
+          - www.fabster-k8s.com
