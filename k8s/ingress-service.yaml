@@ -10,11 +10,22 @@ metadata:
 spec:
   tls:
     - hosts:
-      - fabster-k8s.com
-      - www.fabster-k8s.com
+        - fabster-k8s.com
+        - www.fabster-k8s.com
       secretName: fabster-k8s-com
   rules:
     - host: fabster-k8s.com
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: client-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            backend:
+              serviceName: server-cluster-ip-service
+              servicePort: 5000
+    - host: www.fabster-k8s.com
       http:
         paths:
           - path: /?(.*)
