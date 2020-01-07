@@ -10,8 +10,8 @@ metadata:
 spec:
   tls:
     - hosts:
-        - fabster-k8s.com
-        - www.fabster-k8s.com
+      - fabster-k8s.com
+      - www.fabster-k8s.com
       secretName: fabster-k8s-com
   rules:
     - host: fabster-k8s.com
