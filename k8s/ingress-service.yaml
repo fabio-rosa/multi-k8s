@@ -25,11 +25,11 @@ spec:
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 5000
-          - path: /prometheus
+          - path: /prometheus/?(.*)
             backend:
               serviceName: prometheus-main
               servicePort: 9090
-          - path: /alertmanager
+          - path: /alertmanager/?(.*)
             backend:
               serviceName: alertmanager-main
               servicePort: 9093

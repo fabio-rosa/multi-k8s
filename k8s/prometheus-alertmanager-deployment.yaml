@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 1
   version: v1.7.1
-  externalUrl: https://fabster-k8s.com/prometheus
+  externalUrl: https://fabster-k8s.com/prometheus/
   resources:
     requests:
       memory: 400Mi
@@ -17,7 +17,7 @@ metadata:
 spec:
   replicas: 3
   version: v0.7.1
-  externalUrl: https://fabster-k8s.com/alertmanager
+  externalUrl: https://fabster-k8s.com/alertmanager/
   resources:
     requests:
       memory: 400Mi
