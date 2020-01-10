@@ -14,6 +14,12 @@ spec:
         - www.fabster-k8s.com
       secretName: fabster-k8s-com
   rules:
+    - http:
+        paths:
+          - path: /prometheus2
+            backend:
+              serviceName: prometheus-main
+              servicePort: 9090
     - host: fabster-k8s.com
       http:
         paths:
